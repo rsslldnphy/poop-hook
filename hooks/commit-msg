@@ -1,0 +1,4 @@
+test "" = "$(head -n 1 $1 | grep -v "^:\w*:")" || {
+  echo ":poop:" | tr -d "\n" | cat - $1 > /tmp/poop-hook && mv /tmp/poop-hook $1
+}
+echo "hello"
